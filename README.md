@@ -23,24 +23,26 @@ Este projeto é uma implementação simples e funcional de um sistema de solicit
 
 No Windows, os comandos podem ser executados em PowerShell:
 
-`powershell
+```powershell
 composer install
 Copy-Item .env.example .env -Force
 php artisan key:generate
-`
+npm install
+npm run build
+```
 
 ### Configuração do .env
 
 Para o ambiente local, o projeto já vem com SQLite configurado por padrão. Se preferir usar MySQL, ajuste o bloco abaixo:
 
-`env
+```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=solicitacao_compras
 DB_USERNAME=root
 DB_PASSWORD=
-`
+```
 
 ## Banco de dados
 
@@ -52,21 +54,19 @@ php artisan migrate --seed
 
 Ou para reiniciar o banco completamente:
 
-`powershell
+```powershell
 php artisan migrate:fresh --seed
-`
+```
 
 ## Executar o projeto
 
-`powershell
+```powershell
 php artisan serve
-`
+```
 
 A aplicação ficará disponível em:
 
-`	ext
 http://127.0.0.1:8000
-`
 
 ## Estrutura do projeto
 
@@ -79,12 +79,12 @@ http://127.0.0.1:8000
 
 ## Relacionamentos do banco
 
-`mermaid
+```mermaid
 flowchart TD
     ServiceOrder --> PurchaseRequest
     PurchaseRequest --> PaymentOrder
     PaymentOrder --> Installment
-`
+```
 
 ### Explicação dos relacionamentos
 
