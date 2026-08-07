@@ -8,9 +8,9 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('installments', function (Blueprint $table) {
+        Schema::create('parcelas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('payment_order_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('payment_order_id')->constrained('ordens_pagamento')->cascadeOnDelete();
             $table->unsignedInteger('installment_number');
             $table->decimal('amount', 12, 2);
             $table->date('due_date');
@@ -22,6 +22,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('installments');
+        Schema::dropIfExists('parcelas');
     }
 };

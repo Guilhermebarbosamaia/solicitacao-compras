@@ -43,7 +43,7 @@ class PurchaseRequestForm extends Component
             'description' => 'required|string|max:255',
             'status' => 'required|in:pending,approved,rejected,completed',
             'estimated_value' => 'required|numeric|min:0.01',
-            'service_order_id' => 'nullable|exists:service_orders,id',
+            'service_order_id' => 'nullable|exists:ordens_servico,id',
         ], [
             'description.required' => 'A descrição é obrigatória.',
             'estimated_value.numeric' => 'Informe um valor numérico válido.',

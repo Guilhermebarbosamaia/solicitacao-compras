@@ -10,6 +10,8 @@ class ServiceOrder extends Model
 {
     use HasFactory;
 
+    protected $table = 'ordens_servico';
+
     protected $fillable = [
         'code',
         'description',

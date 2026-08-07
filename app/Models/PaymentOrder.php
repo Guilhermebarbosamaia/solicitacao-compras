@@ -11,6 +11,8 @@ class PaymentOrder extends Model
 {
     use HasFactory;
 
+    protected $table = 'ordens_pagamento';
+
     protected $fillable = [
         'purchase_request_id',
         'description',

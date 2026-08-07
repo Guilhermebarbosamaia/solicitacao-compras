@@ -8,12 +8,12 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('purchase_requests', function (Blueprint $table) {
+        Schema::create('solicitacoes_compra', function (Blueprint $table) {
             $table->id();
             $table->string('description');
             $table->string('status')->default('pending');
             $table->decimal('estimated_value', 12, 2);
-            $table->foreignId('service_order_id')->nullable()->constrained()->nullOnDelete();
+            $table->foreignId('service_order_id')->nullable()->constrained('ordens_servico')->nullOnDelete();
             $table->timestamps();
             $table->index(['status']);
         });
@@ -21,6 +21,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('purchase_requests');
+        Schema::dropIfExists('solicitacoes_compra');
     }
 };

@@ -10,6 +10,8 @@ class Installment extends Model
 {
     use HasFactory;
 
+    protected $table = 'parcelas';
+
     protected $fillable = [
         'payment_order_id',
         'installment_number',

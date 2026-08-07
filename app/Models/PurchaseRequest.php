@@ -11,6 +11,8 @@ class PurchaseRequest extends Model
 {
     use HasFactory;
 
+    protected $table = 'solicitacoes_compra';
+
     protected $fillable = [
         'description',
         'status',
