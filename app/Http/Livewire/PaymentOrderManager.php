@@ -53,8 +53,16 @@ class PaymentOrderManager extends Component
             'installments.*.status' => 'required|in:pending,approved,rejected,completed',
         ], [
             'description.required' => 'A descrição é obrigatória.',
+            'payment_type.required' => 'O tipo de pagamento é obrigatório.',
             'total_amount.required' => 'Informe o valor total.',
+            'total_amount.numeric' => 'Informe um valor numérico válido para o valor total.',
             'due_date.required' => 'Informe a data de vencimento.',
+            'status.required' => 'O status é obrigatório.',
+            'installments.*.installment_number.required' => 'O número da parcela é obrigatório.',
+            'installments.*.amount.required' => 'O valor da parcela é obrigatório.',
+            'installments.*.amount.numeric' => 'Informe um valor numérico válido para a parcela.',
+            'installments.*.due_date.required' => 'A data de vencimento da parcela é obrigatória.',
+            'installments.*.status.required' => 'O status da parcela é obrigatório.',
         ]);
 
         if ($validated['payment_type'] === 'installment') {

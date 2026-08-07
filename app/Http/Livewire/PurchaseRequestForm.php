@@ -46,6 +46,8 @@ class PurchaseRequestForm extends Component
             'service_order_id' => 'nullable|exists:ordens_servico,id',
         ], [
             'description.required' => 'A descrição é obrigatória.',
+            'status.required' => 'O status é obrigatório.',
+            'estimated_value.required' => 'O valor estimado é obrigatório.',
             'estimated_value.numeric' => 'Informe um valor numérico válido.',
             'estimated_value.min' => 'O valor estimado precisa ser maior que zero.',
         ]);
