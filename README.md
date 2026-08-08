@@ -81,9 +81,9 @@ http://127.0.0.1:8000
 
 ```mermaid
 flowchart TD
-    ServiceOrder --> PurchaseRequest
-    PurchaseRequest --> PaymentOrder
-    PaymentOrder --> Installment
+    ordens_servico --> solicitacoes_compra
+    solicitacoes_compra --> ordens_pagamento
+    ordens_pagamento --> parcelas
 ```
 
 ### Explicação dos relacionamentos
